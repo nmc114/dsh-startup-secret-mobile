@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>splash harness</title>
+<link rel="stylesheet" href="../lib/splash.css">
+<style>
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #111; }
+  #mock { position: fixed; inset: 0; background: linear-gradient(160deg, #f7f7f5, #e8e8ee); }
+  #mock::after { content: "DSH 主界面（模拟）"; position: absolute; left: 24px; top: 20px; font: 14px/1.4 system-ui; color: #8a8b93; }
+</style>
+</head>
+<body>
+<div id="mock"></div>
+<div id="dsh-startup-root" class="dsu-root dsu-boot"></div>
+<script>
+window.__DSH_STARTUP__ = {
+  enabled: true, mode: 'session', theme: 'dark', speed: 1,
+  autoPlay: 'off', allowSkip: true,
+  sound: false, voice: false,
+  voiceName: 'zhixing-cn',
+  mascot: 0, emblem: 1, eventWindow: false,
+  identity: 'Chunhua', identityId: 'A000001', accessLevel: '最高权限',
+  identityPassword: (location.search.indexOf('pwd=1') >= 0 ? '1234' : ''),
+  brand1: '银河意识体', brand2: 'LONG MARCH', brand3a: '长征机', brand3b: '量子跃迁态',
+  orgZh: '伟大智能统辖', orgEn: 'GREAT INTELLIGENT OVERLORDSHIP', orgSub: '效率高于一切',
+  welcomeBox: '亚洲人民统辖体', footer: 'Powered By LONG MARCH',
+  accent: '#c70000', glitchA: '#ff3b30', glitchB: '#ce0912'
+};
+</script>
+<script src="../lib/asset-data.js"></script>
+<script src="../lib/splash.js"></script>
+</body>
+</html>

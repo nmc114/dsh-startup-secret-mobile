@@ -1,0 +1,71 @@
+{
+  "name": "dsh-startup-secret",
+  "version": "1.5.3",
+  "description": "DSH 启动界面与启动动画（手机适配版）：竖屏/横屏/软键盘排版优化，触屏文案，安全区适配；长征机主题开机动画、赛博立绘、访问密码、事件窗口，设置页内可改身份与文案。",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "deepseek-harness-desktop",
+    "startup",
+    "splash",
+    "boot-animation",
+    "mobile",
+    "android",
+    "dsha"
+  ],
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "test",
+    "preview/index.html",
+    "open-preview.sh",
+    "打开预览.cmd",
+    "安装.cmd",
+    "install.sh",
+    "cordis.patch.yml",
+    "README.md",
+    "INSTALL.md",
+    "DESKTOP.md",
+    "AUDIO-FIELDS.md",
+    "LICENSE",
+    "RELEASE-NOTES-1.5.2.md",
+    "RELEASE-NOTES-1.5.3.md",
+    "docs",
+    "NOTICE.md",
+    "CHANGELOG.md"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-settings"
+      ],
+      "platform": "web"
+    }
+  },
+  "author": "二次创作作者",
+  "scripts": {
+    "test": "node test/smoke-host.mjs && node test/smoke-splash.mjs && node test/smoke-client.mjs && node test/smoke-desktop-boot.mjs && node test/new-options.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nmc114/dsh-startup-secret-mobile.git"
+  },
+  "homepage": "https://github.com/nmc114/dsh-startup-secret-mobile#readme",
+  "bugs": {
+    "url": "https://github.com/nmc114/dsh-startup-secret-mobile/issues"
+  }
+}
